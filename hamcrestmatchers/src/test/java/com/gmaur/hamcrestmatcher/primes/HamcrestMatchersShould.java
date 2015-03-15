@@ -2,7 +2,7 @@ package com.gmaur.hamcrestmatcher.primes;
 
 import org.junit.Test;
 
-import static com.gmaur.hamcrestmatcher.primes.PrimeSmallerThan4.prime;
+import static com.gmaur.hamcrestmatcher.primes.PrimeMatcher.prime;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;

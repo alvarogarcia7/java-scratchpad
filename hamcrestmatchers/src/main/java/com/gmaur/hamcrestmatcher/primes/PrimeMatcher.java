@@ -7,7 +7,7 @@ import org.hamcrest.TypeSafeMatcher;
 /**
  * Created by alvaro on 15/03/15.
  */
-public class PrimeSmallerThan4 extends TypeSafeMatcher<Integer> {
+public class PrimeMatcher extends TypeSafeMatcher<Integer> {
 
 	private final int SMALLEST_POSITIVE_PRIME = 2;
 
@@ -36,6 +36,6 @@ public class PrimeSmallerThan4 extends TypeSafeMatcher<Integer> {
 	}
 
 	public static <T> Matcher<Integer> prime () {
-		return new PrimeSmallerThan4();
+		return new PrimeMatcher();
 	}
 }
