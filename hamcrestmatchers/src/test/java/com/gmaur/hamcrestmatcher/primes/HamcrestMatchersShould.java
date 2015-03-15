@@ -38,5 +38,10 @@ public class HamcrestMatchersShould {
 		assertThat(5, is(prime()));
 	}
 
+	@Test
+	public void detect_negative_primes () {
+		assertThat(-5, is(prime()));
+	}
+
 
 }

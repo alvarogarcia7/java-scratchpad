@@ -9,12 +9,14 @@ import org.hamcrest.TypeSafeMatcher;
 */
 public class PrimeSmallerThan4 extends TypeSafeMatcher<Integer> {
 
+	private final int SMALLEST_POSITIVE_PRIME = 2;
+
 	@Override
 	protected boolean matchesSafely(Integer item) {
-		if(item < 2){
+		if(item < SMALLEST_POSITIVE_PRIME){
 			return false;
 		}
-		for(int i = 2; i<item; i++){
+		for(int i = SMALLEST_POSITIVE_PRIME; i<item; i++){
 			if(item % i == 0){
 				return false;
 			}
