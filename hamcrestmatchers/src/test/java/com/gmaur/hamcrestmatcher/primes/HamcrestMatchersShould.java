@@ -39,9 +39,16 @@ public class HamcrestMatchersShould {
 	}
 
 	@Test
-	public void detect_any_2n_as_non_prime () {
+	public void detect_any_2n_greater_than_2_as_non_prime () {
 		for(int i = 2 ; i<100; i++) {
 			assertThat(2 * i, is(not(prime())));
+		}
+	}
+
+	@Test
+	public void detect_any_3n_greater_than_3_as_non_prime () {
+		for(int i =  2; i<100; i++) {
+			assertThat(3 * i, is(not(prime())));
 		}
 	}
 
