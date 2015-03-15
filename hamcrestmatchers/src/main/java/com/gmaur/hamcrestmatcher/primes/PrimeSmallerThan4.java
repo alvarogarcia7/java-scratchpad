@@ -11,7 +11,15 @@ public class PrimeSmallerThan4 extends TypeSafeMatcher<Integer> {
 
 	@Override
 	protected boolean matchesSafely(Integer item) {
-		return item == 2 || item == 3 || item == 5;
+		if(item < 2){
+			return false;
+		}
+		for(int i = 2; i<item; i++){
+			if(item % i == 0){
+				return false;
+			}
+		}
+		return true;
 	}
 
 	@Override
