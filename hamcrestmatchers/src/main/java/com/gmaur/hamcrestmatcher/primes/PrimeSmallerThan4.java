@@ -12,7 +12,8 @@ public class PrimeSmallerThan4 extends TypeSafeMatcher<Integer> {
 	private final int SMALLEST_POSITIVE_PRIME = 2;
 
 	@Override
-	protected boolean matchesSafely(Integer item) {
+	protected boolean matchesSafely(Integer value) {
+		Integer item = Math.abs(value);
 		if(item < SMALLEST_POSITIVE_PRIME){
 			return false;
 		}
