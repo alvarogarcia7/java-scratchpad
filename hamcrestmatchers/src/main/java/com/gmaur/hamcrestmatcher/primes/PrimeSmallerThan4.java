@@ -5,20 +5,20 @@ import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
 /**
-* Created by alvaro on 15/03/15.
-*/
+ * Created by alvaro on 15/03/15.
+ */
 public class PrimeSmallerThan4 extends TypeSafeMatcher<Integer> {
 
 	private final int SMALLEST_POSITIVE_PRIME = 2;
 
 	@Override
-	protected boolean matchesSafely(Integer value) {
+	protected boolean matchesSafely (Integer value) {
 		Integer item = Math.abs(value);
-		if(item < SMALLEST_POSITIVE_PRIME){
+		if (item < SMALLEST_POSITIVE_PRIME) {
 			return false;
 		}
-		for(int i = SMALLEST_POSITIVE_PRIME; i<item; i++){
-			if(item % i == 0){
+		for (int i = SMALLEST_POSITIVE_PRIME; i < item; i++) {
+			if (item % i == 0) {
 				return false;
 			}
 		}
@@ -26,13 +26,13 @@ public class PrimeSmallerThan4 extends TypeSafeMatcher<Integer> {
 	}
 
 	@Override
-	public void describeTo(Description description) {
+	public void describeTo (Description description) {
 		description.appendText("a prime");
 	}
 
 	@Override
 	protected void describeMismatchSafely (final Integer item, final Description mismatchDescription) {
-		mismatchDescription.appendText(item+" is the product of two prime factors");
+		mismatchDescription.appendText(item + " is the product of two prime factors");
 	}
 
 	public static <T> Matcher<Integer> prime () {
