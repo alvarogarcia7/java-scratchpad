@@ -17,8 +17,7 @@ public class CircularList<D> {
     public void add (D value) {
         final Node newNode = new Node(value);
         if (!last.isPresent()) {
-            newNode.next = newNode;
-            last = Optional.of(newNode);
+            setAsOnlyValue(newNode);
             current = last;
         } else {
             newNode.next = last.get().next;
@@ -26,6 +25,11 @@ public class CircularList<D> {
             last = Optional.of(newNode);
         }
         System.out.println(this.toString());
+    }
+
+    private void setAsOnlyValue (final Node newNode) {
+        newNode.next = newNode;
+        last = Optional.of(newNode);
     }
 
     public D next (){
