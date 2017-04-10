@@ -6,8 +6,8 @@ import static java.util.Optional.empty;
 
 public class CircularList<D> {
 
-    private Optional<Node<D>> current;
-    private Optional<Node<D>> last;
+    private Optional<Node> current;
+    private Optional<Node> last;
 
     public CircularList () {
         this.current = empty();
@@ -32,7 +32,7 @@ public class CircularList<D> {
         if(!current.isPresent()){
             return null;
         }
-        final Node<D> previous = current.get();
+        final Node previous = current.get();
         current = Optional.of(previous.next);
         return previous.value;
     }
@@ -43,8 +43,8 @@ public class CircularList<D> {
             return "empty";
         }
 
-        final Node<D> initialNode= current.get();
-        Node<D> currentNode = initialNode;
+        final Node initialNode= current.get();
+        Node currentNode = initialNode;
         StringBuffer stringBuffer = new StringBuffer();
 
         while(true){
@@ -61,9 +61,9 @@ public class CircularList<D> {
     }
 
 
-    private class Node<D> {
+    private class Node {
         private final D value;
-        private Node<D> next;
+        private Node next;
 
         public Node (final D value) {
             this.value = value;
