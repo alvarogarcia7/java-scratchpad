@@ -43,7 +43,7 @@ public class CircularList<D> {
         }
 
         final Node<D> initialNode= current.get();
-        Node<D> currentNode = current.get();
+        Node<D> currentNode = initialNode;
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(currentNode.toString());
         currentNode = currentNode.next;
