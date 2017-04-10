@@ -25,6 +25,7 @@ public class CircularList<D> {
             last.get().next = newNode;
             last = Optional.of(newNode);
         }
+        System.out.println(this.toString());
     }
 
     public D next (){
@@ -45,11 +46,16 @@ public class CircularList<D> {
         final Node<D> initialNode= current.get();
         Node<D> currentNode = initialNode;
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append(currentNode.toString());
-        currentNode = currentNode.next;
-        while (initialNode != currentNode) {
-            stringBuffer.append("=>").append(currentNode);
+
+        while(true){
+            stringBuffer.append(currentNode.toString());
             currentNode = currentNode.next;
+            if (currentNode != initialNode) {
+                stringBuffer.append("=>");
+            } else {
+                break;
+            }
+
         }
         return stringBuffer.toString();
     }
