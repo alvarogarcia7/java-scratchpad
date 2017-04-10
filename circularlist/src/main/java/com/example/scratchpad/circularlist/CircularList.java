@@ -20,11 +20,15 @@ public class CircularList<D> {
             setAsOnlyValue(newNode);
             current = last;
         } else {
-            newNode.next = last.get().next;
-            last.get().next = newNode;
+            appendAndLink(newNode);
             last = Optional.of(newNode);
         }
         System.out.println(this.toString());
+    }
+
+    private void appendAndLink (final Node newNode) {
+        newNode.next = last.get().next;
+        last.get().next = newNode;
     }
 
     private void setAsOnlyValue (final Node newNode) {
