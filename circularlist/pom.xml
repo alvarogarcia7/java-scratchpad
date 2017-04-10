@@ -35,6 +35,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.github.alvarogarcia7</groupId>
+            <artifactId>java-parent</artifactId>
+            <version>v0.0.1</version>
+        </dependency>
     </dependencies>
 
 
