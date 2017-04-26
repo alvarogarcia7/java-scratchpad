@@ -29,7 +29,7 @@ public class CircularListShould {
         final DomainObject value = value(1);
 
         circularList.add(value);
-        
+
         assertThatNextIs(sameInstance(value));
         assertThatNextIs(sameInstance(value));
     }
@@ -67,7 +67,7 @@ public class CircularListShould {
     }
 
     @Test
-    public void mix_of_add_and_next () {
+    public void adding_is_always_at_the_end () {
         final DomainObject value1 = value(1);
         final DomainObject value2 = value(2);
         final DomainObject value3 = value(3);
