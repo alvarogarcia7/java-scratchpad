@@ -27,7 +27,9 @@ public class CircularListShould {
     @Test
     public void with_one_element_the_returned_element_is_always_the_same () {
         final DomainObject value = value(1);
+
         circularList.add(value);
+        
         assertThatNextIs(sameInstance(value));
         assertThatNextIs(sameInstance(value));
     }
