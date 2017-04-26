@@ -25,7 +25,7 @@ public class CircularListShould {
 
     @Test
     public void with_one_element_the_returned_element_is_always_the_same () {
-        final DomainObject value = new DomainObject(1);
+        final DomainObject value = value(1);
         circularList.add(value);
         org.hamcrest.MatcherAssert.assertThat(circularList.next(), sameInstance(value));
         org.hamcrest.MatcherAssert.assertThat(circularList.next(), sameInstance(value));
@@ -33,8 +33,8 @@ public class CircularListShould {
 
     @Test
     public void with_two_elements_the_list_circles () {
-        final DomainObject value1 = new DomainObject(1);
-        final DomainObject value2 = new DomainObject(2);
+        final DomainObject value1 = value(1);
+        final DomainObject value2 = value(2);
 
         circularList.add(value1);
         circularList.add(value2);
@@ -46,10 +46,10 @@ public class CircularListShould {
 
     @Test
     public void with_multiple_elements_the_list_circles () {
-        final DomainObject value1 = new DomainObject(1);
-        final DomainObject value2 = new DomainObject(2);
-        final DomainObject value3 = new DomainObject(3);
-        final DomainObject value4 = new DomainObject(4);
+        final DomainObject value1 = value(1);
+        final DomainObject value2 = value(2);
+        final DomainObject value3 = value(3);
+        final DomainObject value4 = value(4);
 
         circularList.add(value1);
         circularList.add(value2);
@@ -65,11 +65,11 @@ public class CircularListShould {
 
     @Test
     public void mix_of_add_and_next () {
-        final DomainObject value1 = new DomainObject(1);
-        final DomainObject value2 = new DomainObject(2);
-        final DomainObject value3 = new DomainObject(3);
-        final DomainObject value4 = new DomainObject(4);
-        final DomainObject value5 = new DomainObject(5);
+        final DomainObject value1 = value(1);
+        final DomainObject value2 = value(2);
+        final DomainObject value3 = value(3);
+        final DomainObject value4 = value(4);
+        final DomainObject value5 = value(5);
 
         circularList.add(value1);
         org.hamcrest.MatcherAssert.assertThat(circularList.next(), sameInstance(value1));
@@ -90,5 +90,9 @@ public class CircularListShould {
         org.hamcrest.MatcherAssert.assertThat(circularList.next(), sameInstance(value1));
         circularList.add(value5);
         org.hamcrest.MatcherAssert.assertThat(circularList.next(), sameInstance(value2));
+    }
+
+    private DomainObject value (final int representation) {
+        return new DomainObject(representation);
     }
 }
