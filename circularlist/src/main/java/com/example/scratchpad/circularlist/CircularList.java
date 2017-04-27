@@ -14,7 +14,7 @@ public class CircularList<D> {
         this.last = empty();
     }
 
-    public void add (D value) {
+    public CircularList<D> add (D value) {
         final Node newNode = new Node(value);
         if (!last.isPresent()) {
             setAsOnlyValue(newNode);
@@ -22,6 +22,7 @@ public class CircularList<D> {
             appendAndLink(newNode);
         }
         System.out.println(this.toString());
+        return this;
     }
 
     private void appendAndLink (final Node newNode) {

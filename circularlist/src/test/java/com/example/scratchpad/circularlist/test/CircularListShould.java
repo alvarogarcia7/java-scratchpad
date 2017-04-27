@@ -104,6 +104,6 @@ public class CircularListShould {
     }
 
     private void add (final DomainObject value1) {
-        circularList.add(value1);
+        circularList = circularList.add(value1);
     }
 }
