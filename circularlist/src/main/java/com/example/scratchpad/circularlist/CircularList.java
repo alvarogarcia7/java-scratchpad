@@ -45,10 +45,6 @@ public class CircularList<D> {
 
     @Override
     public String toString () {
-        if (!current.isPresent()) {
-            return "empty";
-        }
-
         final Node initialNode= current.get();
         Node currentNode = initialNode;
         StringBuffer stringBuffer = new StringBuffer();
@@ -84,7 +80,7 @@ public class CircularList<D> {
 
         @Override
         public String toString () {
-            return super.toString();
+            return "empty";
         }
     }
 
