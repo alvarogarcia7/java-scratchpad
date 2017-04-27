@@ -70,7 +70,25 @@ public class CircularList<D> {
     }
 
     public static <D> CircularList<D> empty_ () {
-        return new CircularList<>();
+        return new EmptyCircularList<>();
+    }
+
+    private static class EmptyCircularList<D> extends CircularList<D> {
+        @Override
+        public CircularList<D> add (final D value) {
+            final CircularList<D> circularList = new CircularList<>();
+            return circularList.add(value);
+        }
+
+        @Override
+        public D next () {
+            return null;
+        }
+
+        @Override
+        public String toString () {
+            return super.toString();
+        }
     }
 
 
