@@ -38,9 +38,6 @@ public class CircularList<D> {
     }
 
     public D next (){
-        if(!current.isPresent()){
-            return null;
-        }
         final Node previous = current.get();
         current = Optional.of(previous.next);
         return previous.value;
