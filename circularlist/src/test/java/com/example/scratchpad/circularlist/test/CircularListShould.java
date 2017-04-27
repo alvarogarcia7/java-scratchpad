@@ -16,7 +16,7 @@ public class CircularListShould {
 
     @Before
     public void setUp () throws Exception {
-        circularList = new CircularList<>();
+        circularList = CircularList.empty_();
     }
 
     @Test

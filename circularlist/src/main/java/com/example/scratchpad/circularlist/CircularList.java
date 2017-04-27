@@ -69,6 +69,10 @@ public class CircularList<D> {
         return stringBuffer.toString();
     }
 
+    public static <D> CircularList<D> empty_ () {
+        return new CircularList<>();
+    }
+
 
     private class Node {
         private final D value;
