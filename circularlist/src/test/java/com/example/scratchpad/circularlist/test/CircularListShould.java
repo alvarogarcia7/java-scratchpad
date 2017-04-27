@@ -28,7 +28,7 @@ public class CircularListShould {
     public void with_one_element_the_returned_element_is_always_the_same () {
         final DomainObject value = value(1);
 
-        circularList.add(value);
+        add(value);
 
         assertThatNextIs(sameInstance(value));
         assertThatNextIs(sameInstance(value));
@@ -39,8 +39,8 @@ public class CircularListShould {
         final DomainObject value1 = value(1);
         final DomainObject value2 = value(2);
 
-        circularList.add(value1);
-        circularList.add(value2);
+        add(value1);
+        add(value2);
 
         assertThatNextIs(sameInstance(value1));
         assertThatNextIs(sameInstance(value2));
@@ -54,10 +54,10 @@ public class CircularListShould {
         final DomainObject value3 = value(3);
         final DomainObject value4 = value(4);
 
-        circularList.add(value1);
-        circularList.add(value2);
-        circularList.add(value3);
-        circularList.add(value4);
+        add(value1);
+        add(value2);
+        add(value3);
+        add(value4);
 
         assertThatNextIs(sameInstance(value1));
         assertThatNextIs(sameInstance(value2));
@@ -74,24 +74,24 @@ public class CircularListShould {
         final DomainObject value4 = value(4);
         final DomainObject value5 = value(5);
 
-        circularList.add(value1);
+        add(value1);
         assertThatNextIs(sameInstance(value1));
         assertThatNextIs(sameInstance(value1));
         assertThatNextIs(sameInstance(value1));
-        circularList.add(value2);
+        add(value2);
         assertThatNextIs(sameInstance(value1));
         assertThatNextIs(sameInstance(value2));
         assertThatNextIs(sameInstance(value1));
-        circularList.add(value3);
+        add(value3);
         assertThatNextIs(sameInstance(value2));
         assertThatNextIs(sameInstance(value3));
-        circularList.add(value4);
+        add(value4);
         assertThatNextIs(sameInstance(value1));
         assertThatNextIs(sameInstance(value2));
         assertThatNextIs(sameInstance(value3));
         assertThatNextIs(sameInstance(value4));
         assertThatNextIs(sameInstance(value1));
-        circularList.add(value5);
+        add(value5);
         assertThatNextIs(sameInstance(value2));
     }
 
@@ -101,5 +101,9 @@ public class CircularListShould {
 
     private void assertThatNextIs (final Matcher<Object> matcher) {
         assertThat(this.circularList.next(), matcher);
+    }
+
+    private void add (final DomainObject value1) {
+        circularList.add(value1);
     }
 }
